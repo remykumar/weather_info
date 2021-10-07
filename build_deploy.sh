@@ -32,8 +32,14 @@ else
  cd /home/$USER
 fi
 
+# Remove the old code directory and use git to download everytime
+if [[ -d /home/$USER/weather_info ]]; then
+ rm -rf /home/$USER/weather_info
+fi
+
 # Get the code from GitHub
 git clone https://github.com/remykumar/weather_info.git
+
 
 # Starting the Build process
 echo "Starting Build process.."
