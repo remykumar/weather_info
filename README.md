@@ -4,19 +4,25 @@
 
 This repo hosts a quite basic python code which goes out to internet and gets the current weather/temperature of few US cities. The build & deploy script is also in the same repo. 
 The purpose of this code is to learn the build & deploy process (using make). 
+
 Here is the usage help: 
-Note - Please run with your user account not root (having access to execute all sudo commands without password could help in automation. Refer https://www.cyberciti.biz/faq/linux-unix-running-sudo-command-without-a-password/
+
+Note - Please run with your user account not root (having access to execute all sudo commands without password could help in automation). Refer : https://www.cyberciti.biz/faq/linux-unix-running-sudo-command-without-a-password/
 
 Step 1 : Clone the repo from your home directory 
-	`git clone https://github.com/remykumar/weather_info.git`
+	
+	git clone https://github.com/remykumar/weather_info.git
 
 Step 2 : Copy the build_deploy.sh to home directory 
-	`cp ~/weather_info/build_deploy.sh ~`
+	
+	cp ~/weather_info/build_deploy.sh ~
 
-Step 3 : Running the build script 
-	`./build_deploy.sh`
+Step 3 : Running the build script (from your home directory)
+	
+	./build_deploy.sh
 
-Step 4 : Output should look like this - 
+Step 4 : Final Output from build & deploy should look like this - 
+
 ```
 DEPLOY COMPLETE AND RUNNING THE WEATHER INFO CODE..
 
