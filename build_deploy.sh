@@ -33,9 +33,7 @@ else
 fi
 
 # Get the code from GitHub
-
-
-##
+git clone https://github.com/remykumar/weather_info.git
 
 # Starting the Build process
 echo "Starting Build process.."
