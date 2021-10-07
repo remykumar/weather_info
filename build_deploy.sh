@@ -81,7 +81,7 @@ sleep 3
 make run
 
 echo -e "CLEANING UP..\n"
-cp ${BUILD_DIRECTORY}/*.* ${DEPLOY_DIRECTORY}
+cp ${BUILD_DIRECTORY}/* ${DEPLOY_DIRECTORY}
 make clean
 rm -rf ${BUILD_DIRECTORY}
 
