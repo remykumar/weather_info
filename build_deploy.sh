@@ -33,49 +33,58 @@ else
 fi
 
 # Remove the old code directory and use git to download everytime
+echo -e "Removing old cloned directory /home/$USER/weather_info\n"
 if [[ -d /home/$USER/weather_info ]]; then
  rm -rf /home/$USER/weather_info
 fi
 
-# Get the code from GitHub
+# Install git & Get the code from GitHub
+echo -e "Installing git and cloning code from github\n"
+sudo apt-get install git -y
 git clone https://github.com/remykumar/weather_info.git
 
 
 # Starting the Build process
-echo "Starting Build process.."
+echo -e "\nSTARTING BUILD PROCESS..\n"
 sleep 2
 # Swtiching to home directory if not already in it
 cd ${HOME}
 
 # Remove all the previously used old directories
+echo -e "REMOVING OLD BUILD AND DEPLOY DIRECTORIES..\n"
 rm -rf ${BUILD_DIRECTORY}
 rm -rf ${DEPLOY_DIRECTORY}
 
 # Make the directories
+echo -e "CREATING NEW BUILD AND DEPLOY DIRECTORIES..\n"
 mkdir ${BUILD_DIRECTORY}
 mkdir ${DEPLOY_DIRECTORY}
 
 # Changing to Build directory
+echo -e "CHANGING WORK/CURRENT DIRECTORY TO BUILD DIRECTORY..\n"
 cd ${BUILD_DIRECTORY}
 
 # Get the code from the Source directory and move to temp Build directory
-cp ${HOME}/weather_info/*.* ${BUILD_DIRECTORY}
+cp ${HOME}/weather_info/* ${BUILD_DIRECTORY}
 
-echo "Running the Build now.."
+echo -e "RUNNING THE BUILD NOW..\n"
 sleep 2
 
-echo "Taking care of pre-requistives.Installing Linux packages."
+echo -e "Taking care of pre-requistives.INSTALLING LINUX PACKAGES..\n"
 make requires
 
-echo "Creating the Python virtual environment"
+echo -e "\nCREATING PYTHON VIRTUAL ENVIRONMENT..\n"
 make virt_env
 
-echo "DEPLOY and running the code/app"
+echo -e "\nDEPLOY COMPLETE AND RUNNING THE WEATHER INFO CODE..\n"
+sleep 3
 make run
-cp ${BUILD_DIRECTORY}/*.* ${DEPLOY_DIRECTORY}
 
-echo "Clean Up"
+echo -e "CLEANING UP..\n"
+cp ${BUILD_DIRECTORY}/*.* ${DEPLOY_DIRECTORY}
 make clean
 rm -rf ${BUILD_DIRECTORY}
 
-echo "END OF DEPLOYMENT"
+echo -e "END OF DEPLOYMENT!!\n"
+
+echo -e "DEPLOYMENT ARTIFACTS CAN BE FOUND HERE - ${DEPLOY_DIRECTORY}\n"
