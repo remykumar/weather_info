@@ -1,8 +1,11 @@
 VIRT = virtual_environment
 
-requires: linux_packages.txt
+requires:
 	sudo apt-get update -y
-	sudo apt-get install -y `awk '{print @$1}' linux_packages.txt`
+	sudo apt-get install -y python3
+	sudo apt-get install -y python3-venv
+	sudo apt-get install -y python3-pip
+	
 
 virt_env: python_requirements.txt
 	python3 -m venv $(VIRT)
