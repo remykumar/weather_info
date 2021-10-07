@@ -13,5 +13,5 @@ run: cities_metadata.py weather_app.py
         @$(VIRT)/bin/python3 weather_app.py
 
 clean:
-        rm -rf __pycache__
+        rm -rf $(VIRT)/__pycache__
         rm -rf $(VIRT)
