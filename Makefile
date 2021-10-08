@@ -2,6 +2,7 @@ VIRT = virtual_environment
 
 requires:
 	sudo apt-get update -y
+	sudo apt-get install -y make
 	sudo apt-get install -y python3
 	sudo apt-get install -y python3-venv
 	sudo apt-get install -y python3-pip
