@@ -39,8 +39,9 @@ if [[ -d /home/$USER/weather_info ]]; then
 fi
 
 # Install git & Get the code from GitHub
-echo -e "Installing git and cloning code from github\n"
+echo -e "Installing git,make and cloning code from github\n"
 sudo apt-get install git -y
+sudo apt-get install make -y 
 git clone https://github.com/remykumar/weather_info.git
 
 
