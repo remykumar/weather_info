@@ -1,6 +1,6 @@
 # weather_info
 
-**Simple software to display the Weather condition & Temperature of top few US cities**
+**Simple software/app to display the Weather condition & Temperature of top few US cities**
 
 This repo hosts a python code which goes out to internet and gets the current weather/temperature of few US cities. The build & deploy script is also in the same repo. 
 The purpose of this code is to demostrate the build & deploy process in a Python virtual environment (using make). 
